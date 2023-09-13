@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>50 Projects in 50 Days</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .object-fit {
+        object-fit: cover;
+      }
+      .card-img-top {
+        height: 250px;
+      }
+      a.card {
+        text-decoration: none;
+        transition: transform 0.5s, box-shadow 0.5s;
+      }
+      a.card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light px-4 fixed-top ">
+        <a class="navbar-brand">50 Projects in 50 Days</a>
+    </nav>
+      
+    <div class="mx-3 mt-5 pt-3">
+      <div id="root"></div>
+    </div>
+
+    <script type="text/babel">
+      function App() {
+        const projects = {
+          // day01 : { imgUrl:"https://unsplash.it/300/300/?random=01", title:"Day 01", description:"Expanding Cards", link:"#" },
+          day01: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 01",
+            title: "Day01",
+            description: "Expanding Cards",
+            link: "#",
+          },
+          day02: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 02",
+            title: "Day02",
+            description: "Progress Steps",
+            link: "#",
+          },
+          day03: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 03",
+            title: "Day03",
+            description: "Rotating Navigation",
+            link: "#",
+          },
+          day04: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 04",
+            title: "Day04",
+            description: "Hidden Search Widget",
+            link: "#",
+          },
+          day05: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 05",
+            title: "Day05",
+            description: "Blurry Loading",
+            link: "#",
+          },
+          day06: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 06",
+            title: "Day06",
+            description: "Scroll Animation",
+            link: "#",
+          },
+          day07: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 07",
+            title: "Day07",
+            description: "Split Landing Page",
+            link: "#",
+          },
+          day08: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 08",
+            title: "Day08",
+            description: "Form Wave",
+            link: "#",
+          },
+          day09: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 09",
+            title: "Day09",
+            description: "Sound Board",
+            link: "#",
+          },
+          day10: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 10",
+            title: "Day10",
+            description: "Dad Jokes",
+            link: "#",
+          },
+          day11: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 11",
+            title: "Day11",
+            description: "Event Keycodes",
+            link: "#",
+          },
+          day12: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 12",
+            title: "Day12",
+            description: "Faq Collapse",
+            link: "#",
+          },
+          day13: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 13",
+            title: "Day13",
+            description: "Random Choice Picker",
+            link: "#",
+          },
+          day14: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 14",
+            title: "Day14",
+            description: "Animated Navigation",
+            link: "#",
+          },
+          day15: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 15",
+            title: "Day15",
+            description: "Incrementing Counter",
+            link: "#",
+          },
+          day16: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 16",
+            title: "Day16",
+            description: "Drink Water",
+            link: "#",
+          },
+          day17: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 17",
+            title: "Day17",
+            description: "Movie App",
+            link: "#",
+          },
+          day18: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 18",
+            title: "Day18",
+            description: "Background Slider",
+            link: "#",
+          },
+          day19: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 19",
+            title: "Day19",
+            description: "Theme Clock",
+            link: "#",
+          },
+          day20: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 20",
+            title: "Day20",
+            description: "Button Ripple Effect",
+            link: "#",
+          },
+          day21: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 21",
+            title: "Day21",
+            description: "Drag N Drop",
+            link: "#",
+          },
+          day22: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 22",
+            title: "Day22",
+            description: "Drawing App",
+            link: "#",
+          },
+          day23: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 23",
+            title: "Day23",
+            description: "Kinetic Loader",
+            link: "#",
+          },
+          day24: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 24",
+            title: "Day24",
+            description: "Content Placeholder",
+            link: "#",
+          },
+          day25: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 25",
+            title: "Day25",
+            description: "Sticky Navbar",
+            link: "#",
+          },
+          day26: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 26",
+            title: "Day26",
+            description: "Double Vertical Slider",
+            link: "#",
+          },
+          day27: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 27",
+            title: "Day27",
+            description: "Toast Notification",
+            link: "#",
+          },
+          day28: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 28",
+            title: "Day28",
+            description: "Github Profiles",
+            link: "#",
+          },
+          day29: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 29",
+            title: "Day29",
+            description: "Double Click Heart",
+            link: "#",
+          },
+          day30: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 30",
+            title: "Day30",
+            description: "Auto Text Effect",
+            link: "#",
+          },
+          day31: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 31",
+            title: "Day31",
+            description: "Password Generator",
+            link: "#",
+          },
+          day32: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 32",
+            title: "Day32",
+            description: "Good Cheap Fast",
+            link: "#",
+          },
+          day33: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 33",
+            title: "Day33",
+            description: "Notes App",
+            link: "#",
+          },
+          day34: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 34",
+            title: "Day34",
+            description: "Animated Countdown",
+            link: "#",
+          },
+          day35: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 35",
+            title: "Day35",
+            description: "Image Carousel",
+            link: "#",
+          },
+          day36: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 36",
+            title: "Day36",
+            description: "Hoverboard",
+            link: "#",
+          },
+          day37: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 37",
+            title: "Day37",
+            description: "Pokedex",
+            link: "#",
+          },
+          day38: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 38",
+            title: "Day38",
+            description: "Mobile Tab Navigation",
+            link: "#",
+          },
+          day39: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 39",
+            title: "Day39",
+            description: "Password Strength BG",
+            link: "#",
+          },
+          day40: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 40",
+            title: "Day40",
+            description: "3d Background Boxes",
+            link: "#",
+          },
+          day41: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 41",
+            title: "Day41",
+            description: "Verify Account Ui",
+            link: "#",
+          },
+          day42: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 42",
+            title: "Day42",
+            description: "Live User Filter",
+            link: "#",
+          },
+          day43: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 43",
+            title: "Day43",
+            description: "Feedback Ui Design",
+            link: "#",
+          },
+          day44: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 44",
+            title: "Day44",
+            description: "Custom Range Slider",
+            link: "#",
+          },
+          day45: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 45",
+            title: "Day45",
+            description: "Netflix Mobile Navigation",
+            link: "#",
+          },
+          day46: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 46",
+            title: "Day46",
+            description: "Quiz App",
+            link: "#",
+          },
+          day47: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 47",
+            title: "Day47",
+            description: "Testimonial Box Switcher",
+            link: "#",
+          },
+          day48: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 48",
+            title: "Day48",
+            description: "Random Image Feed",
+            link: "#",
+          },
+          day49: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 49",
+            title: "Day49",
+            description: "Todo List",
+            link: "#",
+          },
+          day50: {
+            imgUrl: "http://fakeimg.pl/300x300?text=Day 50",
+            title: "Day50",
+            description: "Insect Catch Game",
+            link: "#",
+          },
+        };
+
+        return (
+          <>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 gx-1 gy-2">
+              <div className="col" data-days="01">
+                <a className="card" target="_blank" href={projects.day01.link}>
+                  <img
+                    src={projects.day01.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day01.title}</span>
+                    <span className="float-end">
+                      {projects.day01.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="02">
+                <a className="card" target="_blank" href={projects.day02.link}>
+                  <img
+                    src={projects.day02.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day02.title}</span>
+                    <span className="float-end">
+                      {projects.day02.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="03">
+                <a className="card" target="_blank" href={projects.day03.link}>
+                  <img
+                    src={projects.day03.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day03.title}</span>
+                    <span className="float-end">
+                      {projects.day03.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="04">
+                <a className="card" target="_blank" href={projects.day04.link}>
+                  <img
+                    src={projects.day04.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day04.title}</span>
+                    <span className="float-end">
+                      {projects.day04.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="05">
+                <a className="card" target="_blank" href={projects.day05.link}>
+                  <img
+                    src={projects.day05.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day05.title}</span>
+                    <span className="float-end">
+                      {projects.day05.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="06">
+                <a className="card" target="_blank" href={projects.day06.link}>
+                  <img
+                    src={projects.day06.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day06.title}</span>
+                    <span className="float-end">
+                      {projects.day06.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="07">
+                <a className="card" target="_blank" href={projects.day07.link}>
+                  <img
+                    src={projects.day07.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day07.title}</span>
+                    <span className="float-end">
+                      {projects.day07.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="08">
+                <a className="card" target="_blank" href={projects.day08.link}>
+                  <img
+                    src={projects.day08.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day08.title}</span>
+                    <span className="float-end">
+                      {projects.day08.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="09">
+                <a className="card" target="_blank" href={projects.day09.link}>
+                  <img
+                    src={projects.day09.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day09.title}</span>
+                    <span className="float-end">
+                      {projects.day09.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="10">
+                <a className="card" target="_blank" href={projects.day10.link}>
+                  <img
+                    src={projects.day10.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day10.title}</span>
+                    <span className="float-end">
+                      {projects.day10.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="11">
+                <a className="card" target="_blank" href={projects.day11.link}>
+                  <img
+                    src={projects.day11.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day11.title}</span>
+                    <span className="float-end">
+                      {projects.day11.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="12">
+                <a className="card" target="_blank" href={projects.day12.link}>
+                  <img
+                    src={projects.day12.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day12.title}</span>
+                    <span className="float-end">
+                      {projects.day12.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="13">
+                <a className="card" target="_blank" href={projects.day13.link}>
+                  <img
+                    src={projects.day13.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day13.title}</span>
+                    <span className="float-end">
+                      {projects.day13.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="14">
+                <a className="card" target="_blank" href={projects.day14.link}>
+                  <img
+                    src={projects.day14.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day14.title}</span>
+                    <span className="float-end">
+                      {projects.day14.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="15">
+                <a className="card" target="_blank" href={projects.day15.link}>
+                  <img
+                    src={projects.day15.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day15.title}</span>
+                    <span className="float-end">
+                      {projects.day15.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="16">
+                <a className="card" target="_blank" href={projects.day16.link}>
+                  <img
+                    src={projects.day16.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day16.title}</span>
+                    <span className="float-end">
+                      {projects.day16.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="17">
+                <a className="card" target="_blank" href={projects.day17.link}>
+                  <img
+                    src={projects.day17.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day17.title}</span>
+                    <span className="float-end">
+                      {projects.day17.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="18">
+                <a className="card" target="_blank" href={projects.day18.link}>
+                  <img
+                    src={projects.day18.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day18.title}</span>
+                    <span className="float-end">
+                      {projects.day18.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="19">
+                <a className="card" target="_blank" href={projects.day19.link}>
+                  <img
+                    src={projects.day19.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day19.title}</span>
+                    <span className="float-end">
+                      {projects.day19.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="20">
+                <a className="card" target="_blank" href={projects.day20.link}>
+                  <img
+                    src={projects.day20.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day20.title}</span>
+                    <span className="float-end">
+                      {projects.day20.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="21">
+                <a className="card" target="_blank" href={projects.day21.link}>
+                  <img
+                    src={projects.day21.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day21.title}</span>
+                    <span className="float-end">
+                      {projects.day21.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="22">
+                <a className="card" target="_blank" href={projects.day22.link}>
+                  <img
+                    src={projects.day22.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day22.title}</span>
+                    <span className="float-end">
+                      {projects.day22.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="23">
+                <a className="card" target="_blank" href={projects.day23.link}>
+                  <img
+                    src={projects.day23.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day23.title}</span>
+                    <span className="float-end">
+                      {projects.day23.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="24">
+                <a className="card" target="_blank" href={projects.day24.link}>
+                  <img
+                    src={projects.day24.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day24.title}</span>
+                    <span className="float-end">
+                      {projects.day24.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="25">
+                <a className="card" target="_blank" href={projects.day25.link}>
+                  <img
+                    src={projects.day25.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day25.title}</span>
+                    <span className="float-end">
+                      {projects.day25.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="26">
+                <a className="card" target="_blank" href={projects.day26.link}>
+                  <img
+                    src={projects.day26.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day26.title}</span>
+                    <span className="float-end">
+                      {projects.day26.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="27">
+                <a className="card" target="_blank" href={projects.day27.link}>
+                  <img
+                    src={projects.day27.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day27.title}</span>
+                    <span className="float-end">
+                      {projects.day27.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="28">
+                <a className="card" target="_blank" href={projects.day28.link}>
+                  <img
+                    src={projects.day28.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day28.title}</span>
+                    <span className="float-end">
+                      {projects.day28.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="29">
+                <a className="card" target="_blank" href={projects.day29.link}>
+                  <img
+                    src={projects.day29.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day29.title}</span>
+                    <span className="float-end">
+                      {projects.day29.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="30">
+                <a className="card" target="_blank" href={projects.day30.link}>
+                  <img
+                    src={projects.day30.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day30.title}</span>
+                    <span className="float-end">
+                      {projects.day30.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="31">
+                <a className="card" target="_blank" href={projects.day31.link}>
+                  <img
+                    src={projects.day31.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day31.title}</span>
+                    <span className="float-end">
+                      {projects.day31.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="32">
+                <a className="card" target="_blank" href={projects.day32.link}>
+                  <img
+                    src={projects.day32.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day32.title}</span>
+                    <span className="float-end">
+                      {projects.day32.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="33">
+                <a className="card" target="_blank" href={projects.day33.link}>
+                  <img
+                    src={projects.day33.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day33.title}</span>
+                    <span className="float-end">
+                      {projects.day33.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="34">
+                <a className="card" target="_blank" href={projects.day34.link}>
+                  <img
+                    src={projects.day34.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day34.title}</span>
+                    <span className="float-end">
+                      {projects.day34.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="35">
+                <a className="card" target="_blank" href={projects.day35.link}>
+                  <img
+                    src={projects.day35.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day35.title}</span>
+                    <span className="float-end">
+                      {projects.day35.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="36">
+                <a className="card" target="_blank" href={projects.day36.link}>
+                  <img
+                    src={projects.day36.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day36.title}</span>
+                    <span className="float-end">
+                      {projects.day36.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="37">
+                <a className="card" target="_blank" href={projects.day37.link}>
+                  <img
+                    src={projects.day37.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day37.title}</span>
+                    <span className="float-end">
+                      {projects.day37.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="38">
+                <a className="card" target="_blank" href={projects.day38.link}>
+                  <img
+                    src={projects.day38.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day38.title}</span>
+                    <span className="float-end">
+                      {projects.day38.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="39">
+                <a className="card" target="_blank" href={projects.day39.link}>
+                  <img
+                    src={projects.day39.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day39.title}</span>
+                    <span className="float-end">
+                      {projects.day39.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="40">
+                <a className="card" target="_blank" href={projects.day40.link}>
+                  <img
+                    src={projects.day40.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day40.title}</span>
+                    <span className="float-end">
+                      {projects.day40.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="41">
+                <a className="card" target="_blank" href={projects.day41.link}>
+                  <img
+                    src={projects.day41.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day41.title}</span>
+                    <span className="float-end">
+                      {projects.day41.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="42">
+                <a className="card" target="_blank" href={projects.day42.link}>
+                  <img
+                    src={projects.day42.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day42.title}</span>
+                    <span className="float-end">
+                      {projects.day42.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="43">
+                <a className="card" target="_blank" href={projects.day43.link}>
+                  <img
+                    src={projects.day43.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day43.title}</span>
+                    <span className="float-end">
+                      {projects.day43.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="44">
+                <a className="card" target="_blank" href={projects.day44.link}>
+                  <img
+                    src={projects.day44.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day44.title}</span>
+                    <span className="float-end">
+                      {projects.day44.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="45">
+                <a className="card" target="_blank" href={projects.day45.link}>
+                  <img
+                    src={projects.day45.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day45.title}</span>
+                    <span className="float-end">
+                      {projects.day45.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="46">
+                <a className="card" target="_blank" href={projects.day46.link}>
+                  <img
+                    src={projects.day46.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day46.title}</span>
+                    <span className="float-end">
+                      {projects.day46.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="47">
+                <a className="card" target="_blank" href={projects.day47.link}>
+                  <img
+                    src={projects.day47.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day47.title}</span>
+                    <span className="float-end">
+                      {projects.day47.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="48">
+                <a className="card" target="_blank" href={projects.day48.link}>
+                  <img
+                    src={projects.day48.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day48.title}</span>
+                    <span className="float-end">
+                      {projects.day48.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="49">
+                <a className="card" target="_blank" href={projects.day49.link}>
+                  <img
+                    src={projects.day49.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day49.title}</span>
+                    <span className="float-end">
+                      {projects.day49.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div className="col" data-days="50">
+                <a className="card" target="_blank" href={projects.day50.link}>
+                  <img
+                    src={projects.day50.imgUrl}
+                    className="card-img-top object-fit"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <span className="text-dark">{projects.day50.title}</span>
+                    <span className="float-end">
+                      {projects.day50.description}
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
