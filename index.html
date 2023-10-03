@@ -32,26 +32,28 @@
     <nav class="navbar navbar-light bg-light px-4 fixed-top ">
         <a class="navbar-brand">50 Projects in 50 Days</a>
     </nav>
-      
+    
     <div class="mx-3 mt-5 pt-3">
+      <p>參考網址: <a href="https://50projects50days.com" target="_blank">50projects50days.com</a></p>
       <div id="root"></div>
     </div>
 
     <script type="text/babel">
+      let path = "../"; //https://wwwchendev.github.io/50projects50days/
       function App() {
         const projects = {
           // day01 : { imgUrl:"https://unsplash.it/300/300/?random=01", title:"Day 01", description:"Expanding Cards", link:"#" },
           day01: {
-            imgUrl: "http://fakeimg.pl/300x300?text=Day 01",
+            imgUrl: "./src/img/d1.png",
             title: "Day01",
             description: "Expanding Cards",
-            link: "#",
+            link: `${path}clone/day01-expanding-cards`,
           },
           day02: {
-            imgUrl: "http://fakeimg.pl/300x300?text=Day 02",
+            imgUrl: "./src/img/d2.png",
             title: "Day02",
             description: "Progress Steps",
-            link: "#",
+            link: `${path}clone/day02-progress-steps`,
           },
           day03: {
             imgUrl: "http://fakeimg.pl/300x300?text=Day 03",
@@ -63,7 +65,7 @@
             imgUrl: "./src/img/d4.png",
             title: "Day04",
             description: "Hidden Search Widget",
-            link: "https://wwwchendev.github.io/50projects50days/clone/day04-hidden-search",
+            link: `${path}clone/day04-hidden-search`,
           },
           day05: {
             imgUrl: "http://fakeimg.pl/300x300?text=Day 05",
