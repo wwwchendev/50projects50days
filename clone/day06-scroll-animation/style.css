@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --bg: #191A21;
+  --bg-box: #C678DD;
+  --text-box: #fff;
+}
+
+* {  box-sizing: border-box;}
+body {
+  background-color: var(--bg);
+  color: #fff;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+h1 { text-align: center; }
+p { font-size: 30px; }
+img { max-width: 100%; }
+
+article {
+  display: flex;
+  width: 66vw;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  transition: transform 0.2s ease-in;
+  /* transition: transform 0.5s ease-in;*/
+  transform: translateY(80%);
+  /* transform: translateX(300%); */
+}
+
+article:nth-of-type(even) {
+  flex-direction: row-reverse;
+  /* transform: translateX(-300%); */
+}
+
+article.show {
+  transform: translateY(0);
+  /* transform: translateX(0); */
+}
+
+article .picture {
+  min-width: 30vw;
+  width: 30vw;
+  min-height: 300px;
+}
+article .content {
+  margin: 0 50px;
+}
+
+/*平板以下尺寸*/
+@media (max-width: 992px) {
+  article {
+    width: 90vw;
+    margin: 20px 0;
+  }
+  article, article:nth-of-type(even) {
+    flex-direction: column;
+    align-items: start;
+    transform: translateX(0%);
+  }
+  article .picture { width: 100%; }
+  article .content { margin: 0px; }
+}

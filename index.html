@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>50 Projects in 50 Days</title>
+    <script src="https://kit.fontawesome.com/291db5f669.js" crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
@@ -12,6 +13,9 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
+      body{
+        background-color:#191A21;
+      }
       .object-fit {
         object-fit: cover;
       }
@@ -29,12 +33,15 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light px-4 fixed-top ">
-        <a class="navbar-brand">50 Projects in 50 Days</a>
+    <nav class="navbar navbar-light bg-dark  px-4 fixed-top ">
+        <a class="navbar-brand text-white">
+          50 Projects in 50 Days
+          <i class="fa-solid fa-book-open" style="color: #ffffff;"></i>
+        </a>
     </nav>
     
     <div class="mx-3 mt-5 pt-3">
-      <p>參考網址: <a href="https://50projects50days.com" target="_blank">50projects50days.com</a></p>
+      <p class="text-white">參考網址: <a href="https://50projects50days.com" target="_blank">50projects50days.com</a></p>
       <div id="root"></div>
     </div>
 
@@ -56,10 +63,10 @@
             link: `${path}clone/day02-progress-steps`,
           },
           day03: {
-            imgUrl: "http://fakeimg.pl/300x300?text=Day 03",
+            imgUrl: "./src/img/d3.png",
             title: "Day03",
             description: "Rotating Navigation",
-            link: "#",
+            link: `${path}clone/day03-rotating-navigation`,
           },
           day04: {
             imgUrl: "./src/img/d4.png",
@@ -68,16 +75,16 @@
             link: `${path}clone/day04-hidden-search`,
           },
           day05: {
-            imgUrl: "http://fakeimg.pl/300x300?text=Day 05",
+            imgUrl: "./src/img/d5.png",
             title: "Day05",
-            description: "Blurry Loading",
-            link: "#",
+            description: `Blurry Loading`,
+            link: `${path}clone/day05-blurry-loading`
           },
           day06: {
-            imgUrl: "http://fakeimg.pl/300x300?text=Day 06",
+            imgUrl: "./src/img/d6.png",
             title: "Day06",
-            description: "Scroll Animation",
-            link: "#",
+            description: `Scroll Animation`,
+            link: `${path}clone/day06-scroll-animation`,
           },
           day07: {
             imgUrl: "http://fakeimg.pl/300x300?text=Day 07",
@@ -349,7 +356,7 @@
           <>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 gx-1 gy-2">
               <div className="col" data-days="01">
-                <a className="card" target="_blank" href={projects.day01.link}>
+                <a className="card " target="_blank" href={projects.day01.link}>
                   <img
                     src={projects.day01.imgUrl}
                     className="card-img-top object-fit"
@@ -364,7 +371,7 @@
                 </a>
               </div>
               <div className="col" data-days="02">
-                <a className="card" target="_blank" href={projects.day02.link}>
+                <a className="card " target="_blank" href={projects.day02.link}>
                   <img
                     src={projects.day02.imgUrl}
                     className="card-img-top object-fit"
@@ -379,14 +386,14 @@
                 </a>
               </div>
               <div className="col" data-days="03">
-                <a className="card" target="_blank" href={projects.day03.link}>
+                <a className="card " target="_blank" href={projects.day03.link}>
                   <img
                     src={projects.day03.imgUrl}
                     className="card-img-top object-fit"
                     alt="..."
                   />
                   <div className="card-body">
-                    <span className="text-dark">{projects.day03.title}</span>
+                    <span className="text-dark ">{projects.day03.title}</span>
                     <span className="float-end">
                       {projects.day03.description}
                     </span>
@@ -394,7 +401,7 @@
                 </a>
               </div>
               <div className="col" data-days="04">
-                <a className="card" target="_blank" href={projects.day04.link}>
+                <a className="card " target="_blank" href={projects.day04.link}>
                   <img
                     src={projects.day04.imgUrl}
                     className="card-img-top object-fit"
@@ -409,7 +416,7 @@
                 </a>
               </div>
               <div className="col" data-days="05">
-                <a className="card" target="_blank" href={projects.day05.link}>
+                <a className="card " target="_blank" href={projects.day05.link}>
                   <img
                     src={projects.day05.imgUrl}
                     className="card-img-top object-fit"
@@ -484,7 +491,7 @@
                 </a>
               </div>
               <div className="col" data-days="10">
-                <a className="card" target="_blank" href={projects.day10.link}>
+                <a className="card " target="_blank" href={projects.day10.link}>
                   <img
                     src={projects.day10.imgUrl}
                     className="card-img-top object-fit"

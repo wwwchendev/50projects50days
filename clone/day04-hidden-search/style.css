@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+  background: linear-gradient(90deg, #9c8af3, #7158e2);
   font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@ body {
   height: 50px;
 }
 
-/* 搜尋元素-輸入框 */
+/* 搜尋輸入框active*/
 .search .input {
   background-color: #fff;
   border: 0;
@@ -32,9 +32,15 @@ body {
   height: 50px;
   width: 50px;
   transition: width 0.3s ease;
+  opacity: 20%;
 }
 
-/* 搜尋元素-查找按鈕 */
+/* 搜尋輸入框active 變寬 */
+.search.active .input {
+  width: 200px;
+}
+
+/* 搜尋按鈕 */
 .btn {
   background-color: #fff;
   border: 0;
@@ -48,19 +54,24 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* 搜尋按鈕active 位移*/
+.search.active .btn {
+  transform: translateX(198px);
+}
+
 /* 取消點擊時的外框 */
 .btn:focus,
 .input:focus {
   outline: none;
 }
 
-/* 搜尋元素 active-切換寬度 */
-.search.active .input {
-  width: 200px;
-}
 
-/* 搜尋元素 active-按鈕移動 */
-.search.active .btn {
-  transform: translateX(198px);
-}
 
+
+#showText {
+  display: none;
+  color: #ffffff;
+}
+#showText.active {
+  display: flex;
+}

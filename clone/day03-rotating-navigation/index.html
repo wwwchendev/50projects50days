@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 載入fontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>03-Rotating Navigation</title>
+</head>
+
+<body>
+    <div class="container ">
+        <!-- 旋轉選單按鈕 -->
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fas fa-times">
+                    </i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars">
+                    </i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 內文 -->
+        <div class="content">
+            <h1>Amazing Article</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut numquam accusantium quo velit quasi a non
+                doloribus ipsum, magni consectetur eaque repellendus dolore, amet, nihil eligendi sed neque sit natus
+                dolorem cum temporibus odio est fugit? Accusantium libero recusandae quisquam porro dolorem incidunt
+                earum expedita perspiciatis fuga. Ea totam, doloremque, dignissimos commodi at repellat sapiente eius,
+                aspernatur esse nulla quod voluptate iste atque. Laborum tempore et, optio veniam aspernatur, magnam
+                quod quis veritatis, nisi sit quae! Recusandae id, veritatis assumenda distinctio unde voluptatum rem
+                optio delectus suscipit itaque repellat exercitationem architecto dolorem aliquid harum hic velit quia
+                ab explicabo error.</p>
+
+            <h3>Shuihuan Cave in Rueifang</h3>
+            <img src="./scenery.png" alt="瑞芳水湳洞" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, vero corrupti. Enim minima tenetur
+                excepturi veniam! Blanditiis officiis voluptas, ab eveniet, quod accusantium provident, voluptatem
+                repellendus earum doloribus eos dolore quo! Aliquam iusto quas reiciendis? Vitae similique illo,
+                consectetur alias autem reiciendis vero eum itaque impedit ab sapiente eius vel voluptas quas. Nulla
+                corporis ipsam, officia doloremque a fuga labore ratione deserunt commodi unde quos alias sapiente
+                magnam, consequatur, iste possimus repellat. Incidunt labore maxime, asperiores ratione libero odit
+                quasi magnam blanditiis saepe corporis optio ut dignissimos eaque sint molestias iste? Exercitationem
+                debitis sed suscipit quo eveniet sapiente! Nemo, optio!</p>
+        </div>
+    </div>
+
+    <!-- 導航列 -->
+    <nav>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-user-alt"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </nav>
+    <script src="script.js"></script>
+</body>
+
+</html>

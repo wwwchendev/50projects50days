@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+--bg-dark:#191A21;
+--circle-bg-dark:#272B34;
+--line-border-fill:#C678DD;
+--line-border-empty:#1B1C20;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  text-align: center;
+  /* width: 300px; */
+  /* border: 1px solid; */
+}
+
+
+/*進度條*/
+.progress-container{
+  /* 設置為flexbox 內部元素分散對齊 */
+  display: flex;
+  justify-content: space-between;  
+  /*設置為絕對定位，讓進度線可以根據容器位置定位*/
+  position: relative;
+  bottom: 30px;
+  /* 寬度設置 */
+  /*設置最大寬度確保不會超過父容器寬度*/ 
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-container::before{
+  content: '';
+  background-color: var(--line-border-empty);
+  height: 4px;
+  width: 100%;
+  z-index:-1;
+  /*定位*/
+  position: absolute;
+  top:50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.progressBar{
+  background-color: var(--line-border-fill);
+  height: 4px;
+  width: 0%;
+  z-index:-1;
+  /*定位*/
+  position: absolute;
+  top:50%;
+  left: 0;
+  transform: translateY(-50%);
+  /*動畫*/
+  transition: .4s ease;
+}
+
+/* 圓框*/
+.circle{
+  background-color:var(--circle-bg-dark) ;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+.circle.active{
+  /* background-color:var(--line-border-fill) ; */
+  border-color: var(--line-border-fill);
+  /* color:var(--circle-bg-dark); */
+}
+
+
+/* 按鈕 */
+.btn{
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border:0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-style: 14px;
+}
+
+.btn:active{
+  transform: scale(0.98);
+}
+
+.btn:focus{
+  outline:0;
+}
+
+.btn:disabled{
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}

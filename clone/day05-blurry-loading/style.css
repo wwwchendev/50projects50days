@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Noto+Sans+TC:wght@300&family=Noto+Serif+TC&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.blur {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);*/
+  z-index: -1;
+  filter: blur(0px);
+}
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+}
+
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+@keyframes typing {
+  /* 動畫起始狀態 */
+  0% { width: 0em; } 
+  /* 動畫結束狀態 */
+  100% { width: 10em; } 
+}
+
+@keyframes caret {
+  50% {border-color:transparent;}
+}
+
+h1 {
+  /*樣式定位*/
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  color: #ffffff;
+}
+
+.typing{
+  /*顯示設置(寬度換行等等)*/
+  width: 10em; 
+  overflow: hidden;
+  white-space: nowrap;
+  /*插入符樣式*/
+  border-right: .05em solid;
+  /*動畫*/
+  animation: 
+  typing 3s steps(10),
+  caret 1s steps(1) infinite;  
+}
+
+.hidden {
+  opacity: 0%;
+}

@@ -13,6 +13,7 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: #191921;
 }
 p{
   font-size: 20px;
