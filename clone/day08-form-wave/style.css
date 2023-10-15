@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  background-color: var(--color-bg-form) ;
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+
+.container h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container a{
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.btn{
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--color-primary);
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:focus{
+  outline: 0;
+}
+
+/* 點擊效果 */
+.btn:active{
+  transform: scale(0.98);
+}
+
+.text{
+  margin-top: 30px ;
+}
+
+
+/* 表單樣式 */
+.form-control{
+  position: relative;
+  margin: 20px 0 40px 0;
+  width: 300px;
+}
+
+/* 表單樣式-插入欄位 */
+.form-control input{
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: var(--color-primary);
+}
+
+
+/* 表單樣式-標籤元素 */
+.form-control label{
+  /* 以form-control為基準定位 */
+  position: absolute;
+  top: 15px;
+  left:0;  
+  /* 不響應任何鼠標事件 */
+  pointer-events: none;
+}
+
+
+/* 表單樣式-標籤元素 span */
+/* 動畫 */
+/* cubic-bezier時間函數 */
+/* 第一個參數 0.7 控制起始速度。 
+  第二個參數 -0.5 控制起始速度的方向。 
+  第三個參數 0.3 控制結束速度。 
+  第四個參數 1.5 控制結束速度的方向。 */
+.form-control label span{
+  display: inline-block;
+  font-size: 18px;
+  transition: all 0.1s ease;
+  /* transition: all 0.3s cubic-bezier(0.7, -0.5, 0.3, 1.5); */
+}  
+
+/* 在input的特定狀態時 改變label span */
+.form-control input:focus+label span,
+.form-control input:valid+label span{
+  color: var(--color-primary);
+  transform: translateY(-30px);
+}
+
+
+
+
