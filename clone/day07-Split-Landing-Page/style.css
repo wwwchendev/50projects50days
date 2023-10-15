@@ -112,12 +112,12 @@ p{
 
 /* .hover-side */
 .hover-left .left,.hover-right .right{
-  width: 75%;  
+  width: var(--hover-width);
   z-index:1;
 }
 /* .other-side */
 .hover-left .right,.hover-right .left{
-  width: 40%;  
+  width: var(--other-width);
   z-index:0;
 }
 
