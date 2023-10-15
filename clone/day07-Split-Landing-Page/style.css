@@ -1,18 +1,157 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
 
+:root {
+  --hover-bg-color: rgba(82, 64, 30, 0.2);
+  --other-bg-color: rgba(0, 0, 0, 0.5);
+  --btn-hover-color: rgba(82, 64, 30, 0.5);
+  --default-width:55%;
+  --hover-width: 75%;
+  --other-width: 40%;
+  /*裁剪路徑:多邊形(左上,左下,右下,右上)*/ 
+  /*clip-path:polygon(0% 0%, 0% 100%,100% 100%,100% 0%); */
+  --left-side-shape: polygon(0% 0%, 0% 100%, 85% 100%, 100% 0%); 
+  --right-side-shape: polygon(15% 0%, 0% 100%, 100% 100%, 100% 0%); 
+}
+
+/* 排版與文字樣式 */
 * {
   box-sizing: border-box;
 }
 
-
 body {
-  background-color: #f6f7fb;
-  font-family: 'Muli', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
   height: 100vh;
   overflow: hidden;
   margin: 0;
 }
+
+.content{
+  color: #fff;
+  text-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 把元素開頭位置放在中間 */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  /* 以自身中心點(自身寬高的一半)與父容器的中心點對齊 */
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+p{
+  font-size: 1.5rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: white solid 0.2rem;
+  font-weight: bold;
+  width: 10rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-color);
+  border: none;
+}
+
+.btn i{
+  margin-right: 5px;
+}
+
+
+/* 分割區塊 */
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.split {
+  position: absolute;
+  width: var(--default-width);
+  height: 100%;
+  overflow: hidden;
+}
+.split.left {
+  left: 0;
+  background-image: url("https://images.unsplash.com/photo-1678026582164-24a5460c447a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: var(--left-side-shape);
+}
+.split.right {
+  right: 0;
+  background-image: url("https://images.unsplash.com/photo-1615444814527-f5ebbea2cadb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80");
+  /*背景尺寸要使用cover唷*/
+  /* background-size: cover; */
+  background-size: 145%;
+  background-position: 40% 60% ;
+  background-repeat: no-repeat; 
+  clip-path: var(--right-side-shape);
+}
+
+
+
+/* Hover-過渡動畫與寬度處理 */
+.split.left , .split.right{
+  transition: width 0.2s ease-in-out;
+}
+
+/* .hover-side */
+.hover-left .left,.hover-right .right{
+  width: 75%;  
+  z-index:1;
+}
+/* .other-side */
+.hover-left .right,.hover-right .left{
+  width: 40%;  
+  z-index:0;
+}
+
+/* Hover-色調處理 */
+/* 默認 */
+.split.left::before ,.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--other-bg-color);
+}
+/* Hover */
+.hover-left .split.left::before,.hover-right .split.right::before{
+  background-color: var(--hover-bg-color);
+}
+
+
+
+
+@media (max-width:800px){
+  h1{
+    font-size: 2rem;
+    /* top:35%; */
+  }
+  .btn{
+    font-size: 1rem;
+    padding: 0.6rem;
+    width: 10rem;
+    /* padding: 1.2rem; */
+  }
+  .split.right {
+    background-size: cover;
+  }
+}
+
+
