@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
 
 * {
   box-sizing: border-box;
@@ -6,8 +13,8 @@
 
 
 body {
-  background-color: #f6f7fb;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,4 +22,5 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  color: #fff;
 }
