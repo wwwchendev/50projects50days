@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 載入fontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="style.css" />
+    <title>09-Sound Board</title>
+</head>
+
+<body>
+    <h1>廚房音效 <i class="bi bi-volume-up-fill"></i></h1>
+    <div class="container">
+        <div class="card" style="width: 100px; height: 100px;">
+            <img src="./img/beating_egg3.png" alt="beating_egg">
+            <span>攪拌器</span>
+            <audio id="beating" class="sound" src="./sounds/beating_egg3.mp3"></audio>
+        </div>
+        <div class="card" style="width: 100px; height: 100px;">
+            <img src="./img/boiling_opening.png" alt="boiling_opening">
+            <span>煮湯</span>
+            <audio id="boiling" class="sound" src="./sounds/boiling_opening.mp3"></audio>
+        </div>
+
+        <div class="card" style="width: 100px; height: 100px;">
+            <img src="./img/instant_drink.png" alt="instant_drink">
+            <span>喝湯</span>
+            <audio id="drink" class="sound" src="./sounds/instant_drink.mp3"></audio>
+        </div>
+        <div class="card" style="width: 150px; height: 100px;">
+            <img src="./img/cracking_egg1.png" alt="cracking_egg1">
+            <span>煎蛋</span>
+            <audio id="cracking" class="sound" src="./sounds/cracking_egg1.mp3"></audio>
+        </div>
+        <div class="card" style="width: 150px; height: 100px;">
+            <img src="./img/clearing_table3.png" alt="clearing_table3">
+            <span>擺放餐盤</span>
+            <audio id="clearing" class="sound" src="./sounds/clearing_table3.mp3"></audio>
+        </div>
+        <div class="card" style="width: 100px; height: 100px;">
+            <img src="./img/toaster.png" alt="toaster">
+            <span>吐司機</span>
+            <audio id="toaster" class="sound" src="./sounds/toaster.mp3"></audio>
+        </div>
+        <div class="card" style="width: 150px; height: 100px;">
+            <img src="./img/kyusu2_Japanese_pod.png" alt="kyusu2_Japanese_pod">
+            <span>果醬罐</span>
+            <audio id="pod" class="sound" src="./sounds/kyusu2_Japanese_pod.mp3"></audio>
+        </div>
+    </div>
+     <pre>「小森平的免費音效」　https://taira-komori.jpn.org/freesoundtw.html　
+    Taira Komori All Rights Reserved. 版權 小森平 	</pre> 
+
+    <div id="buttons"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

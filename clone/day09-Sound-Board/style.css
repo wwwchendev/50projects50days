@@ -1,71 +1,179 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 :root {
   --color-bg: #191A21;
   --color-bg-form: #3d3d3d;
   --color-primary:#C678DD;
+  --font-albumCover:'Play', sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
-
 body {
-  background-image: url('./img/bg.png');
-  background-position: center;
-  background-size: cover;
+  background-color: var(--color-bg);
+  color: #fff;
   font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+  margin: 0;
+}
+.container{
+  max-width: 80vw;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+/* 文字設定 */
+label{
+  margin: 10px 20px;
+}
+p{
+  font-size: 16px;
+  color: #fff;
+  padding: 0;
   margin: 0;
 }
 
-img{
+span{
+  font-size: 13px;
+  color: #e7e7e7;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* 正在播放的專輯 */
+.currentPlay{
+  position: relative;
   width: 100%;
-}
-
-/* 
-.btn{
-  background-color: purple;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  margin: 1rem;
-  padding: 1.5rem 3rem;
-  font-size: 1.2rem;
-  font-family: inherit;
-  cursor: pointer;
-}
-.btn:hover{
-  opacity: 0.9;
-}
-
-.btn:focus{
-  outline: 0;
-} */
-
-.container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 30px;
-}
-.card{
   display: flex;
   flex-direction: column;
-  justify-content: end;
   align-items: center;
-  margin: 20px 10px;
+  justify-content: center;
+  padding: 30px 0 ;
+  /* background: #535353;  */
+  border-radius: 8px  8px 0 0 ;
+}
+.albumCover{  
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  /* background: #818181;  */
+}
+
+.albumCover p{
+  font-family: var(--font-albumCover);
+  position: absolute;
+  top:70%;
+  left: 48%;
+  font-size: 20px;
+}
+
+#togglePlayBtn{
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  /* position: absolute;
+  top: 33%;
+  left: 35%; */
+  z-index: 2;
+  font-size: 20px;
   cursor: pointer;
+}
+#togglePlayBtn:focus{
+  outline: 0;
+}
+
+#togglePlayBtn #btnPause{
+  display: none;
+} 
+#togglePlayBtn.active #btnPause{
+  display: block ;
+} 
+#togglePlayBtn.active #btnPlay{
+  display: none;
+} 
+
+
+
+/* 撥放清單 */
+ul{
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: left;
+  width: 100%;
+  padding: 0 ;
+}
+
+li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  position:relative;
+  width: 100%;
+  padding: 0 20px;
+}
+
+li .thumbnail{
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 15px 20px 10px 0px; 
+  padding: 0 0 10px 0;
+  /* background: #818181;  */
+}
+
+li a{
+  color: #fff;
+  position:absolute;
+  right: 20px;
+  top: 25px;
+}
+
+li:hover{
+  background: rgba(0,0,0,0.2);
+  cursor: pointer
+}
+
+li.active{
+  background: rgba(0,0,0,0.7);
+}
+
+/* 背景色設定 */
+.bg-gradient{
+  background: #0B486B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(135deg, #F56217, #0B486B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(135deg, #F56217, #0B486B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
+
+
+.bg-gradient-reverse{
+  background: hsla(202, 81%, 23%, 0.8);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(315deg, rgba(245, 98, 23,0.7), rgba(11, 71, 106,0.7));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(315deg, rgba(245, 98, 23,0.7), rgba(11, 71, 106,0.7)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+	background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+
+
+
+@keyframes gradient {
+	0%  { background-position: 0% 50%;}
+	50% { background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
 }
