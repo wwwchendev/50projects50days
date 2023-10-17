@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+  --color-secondary:#3d3d3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: #fff;
+}
+
+h3{
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+.container{
+  width: 500px;
+}
+
+textarea{
+  border: none;
+  display: block;
+  width: 100%;
+  height: 100px;
+  font-family: inherit;
+  padding: 10px;
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+.tag{
+  background-color: var(--color-secondary);
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.tag.highlight{
+  background-color: var(--color-primary);
+}
+
+.sample a{
+  text-decoration: none;
+  color: #bebebe;
+}
+
+.sample a:hover{
+  color: var(--color-primary);
+}
+
+.btn{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 5px;
+}

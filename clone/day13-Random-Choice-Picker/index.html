@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 載入fontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>13-Random-Choice-Picker</title>
+</head>
+<body>
+    <div class="container">
+        <h3>隨機選擇器<hr>輸入所有選項，並以逗號 (',') 分隔。</h3>
+        <div class="sample">
+            <p>隨機選項範本: 
+            <a href="#" class="sampleName">英文名字</a>,
+            <a href="#" class="sampleLocation">台灣地點</a>,
+            <a href="#" class="sampleFood">美食</a>
+            </p>
+        </div>
+        <textarea placeholder="輸入選項..." id="textarea" ></textarea>
+        <button class="btn">送出</button>
+        <div id="tags">
+            <!-- <span class="tag">選項1</span>
+            <span class="tag">選項2</span>
+            <span class="tag highlight">選項3</span> -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
