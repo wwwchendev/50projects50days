@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+  --border-color:#144fc6;
+  --fill-color:#6ab3f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  margin: 0;
+  color: #fff;
+}
+
+h1{
+  margin-top: 50px ;
+  margin-bottom: 0;
+}
+
+h3{
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.text{
+  text-align: center;
+  margin: 0 0 5px;
+}
+
+/* 大杯 */
+.cup{
+  background-color: #fff;
+  border: var(--border-color) 4px solid;
+  color: var(--border-color);
+  border-radius: 0 0 40px 40px;
+  height: 330px;
+  width: 150px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 小杯 */
+.cups{
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cup.cup-small{
+  width: 50px;
+  height: 95px;
+  border-radius: 0 0 15px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  transition: 0.3s ease;
+}
+
+.cup.cup-small.full{
+  background-color: var(--fill-color);
+  color: #fff;
+}
+
+
+/* 剩餘 */
+.remained{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.3s ease;
+  flex: 1;
+}
+
+.remained span{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.remained small{
+  font-size: 12px;
+}
+
+.percentage{
+  background-color: var(--fill-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 0;
+  width: 100%;
+  transition: 0.3 ease;
+}
+
+
+.wrap{
+  display: flex;
+  align-items: center;
+}

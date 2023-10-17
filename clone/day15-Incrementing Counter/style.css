@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: #fff;
+}
+
+.counter-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 50px;  
+}
+
+.counter{
+  font-size: 60px;
+  margin-top: 10px;
+}
+
+
+@media (max-width:580px){
+  body {
+    flex-direction: column;
+  }
+}
