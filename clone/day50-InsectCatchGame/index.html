@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 載入fontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>50-InsectCatchGame</title>
+</head>
+
+<body>
+    <!-- 進入畫面－捕捉昆蟲大作戰 -->
+    <div class="screen">
+        <h1>捕捉昆蟲大作戰</h1>
+        <button class="btn" id="start-btn">開始遊戲</button>
+    </div>
+
+    <!-- 選擇昆蟲 -->
+    <div class="screen">
+        <h1>最近家裡的OO有夠多</h1>
+        <ul class="insects-list">
+            <li>
+                <button class="choose-insect-btn">
+                    <p>蒼蠅</p>
+                    <img src="http://pngimg.com/uploads/fly/fly_PNG3946.png" alt="蒼蠅">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>蚊子</p>
+                    <img src="http://pngimg.com/uploads/mosquito/mosquito_PNG18175.png" alt="蚊子" />
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>蜘蛛</p>
+                    <img src="http://pngimg.com/uploads/spider/spider_PNG12.png" alt="蜘蛛" />
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>蟑螂</p>
+                    <img src="http://pngimg.com/uploads/roach/roach_PNG12163.png" alt="蟑螂" />
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 遊戲畫面 -->
+    <div class="screen game-container" id="game-container">
+        <h3 id="time" class="time">時間: 00:00</h3>
+        <h3 id="score" class="score">分數: 0</h3>
+        <h5 id="message" class="message">
+            開始覺得很煩了嗎? <br>
+            因為討厭的昆蟲永遠抓不完!!
+        </h5>
+        <!-- <div class="insect">
+            <img src="http://pngimg.com/uploads/spider/spider_PNG12.png" alt="蜘蛛" style="transform: rotate(45deg)" />
+        </div> -->
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+.card{
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+  background-color: #fff;
+}
+.card-header{
+  height: 200px;
+}
+
+.card-header img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content{
+  padding: 20px 30px 30px 30px;
+}
+
+.card-title{
+  margin: 0px 0 20px 0;
+}
+
+.card-excerpt {
+  color: #777;
+  margin: 10px 0 20px;
+}
+
+.author{
+  display: flex;
+}
+
+.profile-img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.author-info{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  width: 100px;
+}
+
+
+.author-info small{
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* 載入效果(灰色漸層背景)--圖片 */
+/* 動畫設定 */
+.animated-bg {
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
+
+/* 載入效果(灰色漸層背景)--文字 */
+.animated-bg-text {
+  display: inline-block; /*變成一行*/
+  height: 10px;
+  width: 100%; /*變成100%寬*/
+  border-radius: 50px;
+  margin: 0;
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+
+  100% {
+    background-position: -150% 0;
+  }
+}

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h2 {
+  position: absolute;
+  top: 25%;
+  color: #fff;
+}
+
+.range-container {
+  position: relative;
+}
+
+/* input類型的選擇器 */
+input[type='range'] {
+  width: 300px;
+  margin: 18px 0;
+  /* -webkit-appearance:用於自定義控件元素的外觀，例如取消掉表單元素的預設樣式。 */
+  -webkit-appearance: none;
+  background: var(--color-bg);
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range'] + label {
+  background-color: #fff;
+  position: absolute;
+  top: -25px;
+  left: 110px;
+  width: 80px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+} 
+
+
+/*
+前綴詞（Prefixes）
+通常是指在CSS（層疊樣式表）中使用的瀏覽器引擎前綴，
+以確保不同瀏覽器能夠正確解釋和渲染某些CSS屬性。
+這些前綴通常被用於實驗性或尚未標準化的CSS屬性，
+以確保在不同瀏覽器中的一致性。
+
+以下是一些常見的CSS前綴：
+-webkit-：這是WebKit引擎的前綴，主要用於支援WebKit引擎的瀏覽器，
+          例如Google Chrome和Safari。示例：-webkit-border-radius。
+-moz-：   這是Mozilla引擎的前綴，用於支援Mozilla引擎的瀏覽器，
+          例如Mozilla Firefox。示例：-moz-border-radius。
+-ms-：    這是Microsoft引擎的前綴，用於支援Microsoft引擎的瀏覽器，
+          例如Internet Explorer。示例：-ms-transform。
+*/
+
+
+/* 範圍(input range)滑軌相關的選擇器
+滑塊的相關CSS偽類別（pseudo-class）和偽元素（pseudo-element）選擇器。 
+用於調整滑塊控制項的外觀和行為。
+1. input[type='range']::slider-runnable-track
+用於選擇滑塊的軌道部分，用來顯示滑動范圍。
+2. input[type='range']::slider-thumb
+用於選擇滑塊的拇指部分，也就是用戶可以拖動的滑塊元素。 */
+
+
+
+
+
+/* -webkit- | Chrome & Safari */
+input[type='range']::-webkit-slider-runnable-track {
+  background: purple;
+  border-radius: 4px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid purple;
+  margin-top: -7px;
+  cursor: pointer;
+}  
+
+/* -moz- | Firefox */
+input[type='range']::-moz-range-track {
+  background: purple;
+  border-radius: 4px;
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid purple;
+  margin-top: -7px;
+  cursor: pointer;
+}
+
+/* -ms- | IE */
+input[type='range']::-ms-track {
+  background: purple;
+  border-radius: 4px;
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+}
+
+input[type='range']::-ms-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid purple;
+  margin-top: -7px;
+  cursor: pointer;
+}

@@ -6,18 +6,21 @@
     <!-- 載入fontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-    <title>10-Dad Jokes</title>
+    <title>49-TodoList</title>
 </head>
 <body>
-    <div class="container">
-        <h3>Random Dad-Joke</h3>
-        <div id="joke" class="joke">
-            //Joke goes here
-        </div>
-        <button id="jokeBtn" class="btn">換一個</button>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <h1>Todos</h1>
+    <form id="form">
+        <input type="text" class="input" id="input" placeholder="輸入待辦事項" autocomplete="off">
+        <ul class="todos" id="todos">
+            <!-- <li>待辦事項1</li>
+            <li>待辦事項2</li> -->
+        </ul>
+    </form>
+    <small>左鍵點選切換完成。 <br>右鍵單擊刪除待辦事項</small>
     <script src="script.js"></script>
-
 </body>
 </html>
+
+
+

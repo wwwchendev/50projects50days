@@ -6,18 +6,23 @@
     <!-- 載入fontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-    <title>10-Dad Jokes</title>
+    <title>35-Image Carousel</title>
 </head>
 <body>
-    <div class="container">
-        <h3>Random Dad-Joke</h3>
-        <div id="joke" class="joke">
-            //Joke goes here
+    <div class="carousel">
+        <div class="image-container" id="imgs">
+            <img src="./img/1.png"/>
+            <img src="./img/2.png"/>
+            <img src="./img/3.png"/>
+            <img src="./img/4.png"/>
+            <img src="./img/5.png"/>
         </div>
-        <button id="jokeBtn" class="btn">換一個</button>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+        <div class="buttons-container">
+          <button id="left" class="btn">Prev</button>
+          <button id="right" class="btn">Next</button>
+        </div>
+      </div>
     <script src="script.js"></script>
-
 </body>
 </html>

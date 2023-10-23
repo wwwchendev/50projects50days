@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: #fff;
+}
+
+
+.main{
+  border-radius: 10px;
+  padding: 50px 80px;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+.code-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.code {
+  caret-color: transparent;
+  border-radius: 5px;
+  font-size: 75px;
+  height: 120px;
+  width: 100px;
+  border: 1px solid #eee;
+  margin: 1%;
+  text-align: center;
+  font-weight: 300;
+  -moz-appearance: textfield;
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.code:valid {
+  border-color: #b018ec;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+}
+
+.btnGroup{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+button {
+  background-color: var(--color-bg-form);
+  display: inline-block;
+  padding: 10px  20px;
+  line-height: 20px;
+  max-width: 400px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin: 0 50px;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.submit{
+  background-color: var(--color-primary);
+}
+
+h4{
+  margin-bottom: 20px ;
+}
+a{
+  color: #fff;
+  /* text-decoration: none; */
+  margin-right: 30px;
+}
+
+a:hover{
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .code-container {
+    flex-wrap: wrap;
+  }
+
+  .code {
+    font-size: 60px;
+    height: 80px;
+    max-width: 70px;
+  }
+}

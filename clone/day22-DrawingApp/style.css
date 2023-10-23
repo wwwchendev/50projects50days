@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary: #C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru', 'Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+canvas {
+  background-color: #fff;
+  border: 5px solid var(--color-primary);
+  /* border-radius: 20px 20px 0 0; */
+  cursor: crosshair; 
+}
+
+button:active{
+  transform: scale(0.98);
+}
+
+.toolbox {
+  background-color: var(--color-primary);
+  border: 5px solid var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  width: 810px;
+  padding: 1rem;
+}
+.brushTool,.clearTool{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brushTool>*,.clearTool >* {
+  background-color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.clearTool >*:hover{
+  border: #191A21 3px dashed;
+}
+
+#eraser.active{
+  border: #191A21 3px dashed;
+}

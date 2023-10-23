@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 載入fontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>41-Verify Account Ui</title>
+</head>
+
+<body>
+    <div >
+        <div class="main">
+            <h2>驗證你的電子郵件</h2>
+            <p>我們已將六位數驗證碼寄到您的信箱 cool_guy@email.com <br /> 
+                請於下方欄位輸入代碼以確認你的電子郵件地址 </p>
+            <div class="code-container">
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            </div>
+            <div class="btnGroup">
+                <button class="reset">
+                    清空
+                </button>
+                <button class="submit">
+                    提交
+                </button>
+            </div>
+        </div>
+        <div class="">
+            <h4>沒有收到驗證信嗎?</h4>
+            <div class="">            
+                <a href="#">使用另一個電子信箱</a>
+                <a href="#">重新寄送驗證信</a>            
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

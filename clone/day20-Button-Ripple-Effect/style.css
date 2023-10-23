@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary:#C678DD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru','Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: #fff;
+}
+
+/* 按鈕樣式 */
+button {
+  background-color: purple;
+  color: #fff;
+  border: 1px purple solid;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 30px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* 漣漪效果 */
+button .circle {
+  /* 大小 */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* 顏色 */
+  background-color: #fff;
+  /* 定位 */
+  position: absolute;
+  /* 變形與動畫 */
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  /* to是一個特殊關鍵影格選擇器，表示動畫最終狀態。 */
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}

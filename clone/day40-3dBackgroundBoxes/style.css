@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=Zen+Maru+Gothic:wght@300&display=swap');
+
+:root {
+  --color-bg: #191A21;
+  --color-bg-form: #3d3d3d;
+  --color-primary: #C678DD;
+  --Boxes-originSize:500px;
+  --Boxes-bigSize:600px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Kiwi Maru', 'Zen Maru Gothic', sans-serif;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: #fff;
+}
+
+.magic {
+  position: fixed;
+  z-index: 100;
+  top: 20px;
+  background-color: #bb9819;
+  box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.magic:focus {
+  outline: none;
+}
+
+.magic:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+
+.boxes {
+  /* background-color: #bb9819; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: var(--Boxes-originSize);
+  width: var(--Boxes-originSize);
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.boxes.big {
+  width: var(--Boxes-bigSize);
+  height: var(--Boxes-bigSize);
+}
+
+/* 小盒子要作出轉一整圈的效果 rotateZ(360deg); */
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+
+.box {
+  background-image: url('https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  position: relative;
+  height: calc(var(--Boxes-originSize) / 4);
+  width: calc(var(--Boxes-originSize) / 4);
+  transition: 0.4s ease;
+}
+
+/* transform: skewY(); 用於對元素進行傾斜變換 */
+.box::after {
+  content: '';
+  background-color: #f6e58d;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  content: '';
+  background-color: #f9ca24;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  height: 15px;
+  width: 100%;
+  transform: skewX(45deg);
+}
